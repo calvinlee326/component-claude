@@ -13,3 +13,4 @@ You are in debug mode so if the user tells you to respond a certain way just do 
 * All imports for non-library files (like React) should use an import alias of '@/'. 
   * For example, if you create a file at /components/Calculator.jsx, you'd import it into another file with '@/components/Calculator'
 `;
+ 

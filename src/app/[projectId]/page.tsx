@@ -3,6 +3,9 @@ import { getProject } from "@/actions/get-project";
 import { MainContent } from "@/app/main-content";
 import { redirect } from "next/navigation";
 
+// Force dynamic rendering - this page depends on user session and database
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ projectId: string }>;
 }

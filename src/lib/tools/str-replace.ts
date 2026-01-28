@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { VirtualFileSystem } from "@/lib/file-system";
+import { tool } from "ai";
 
 const TextEditorParameters = z.object({
   command: z.enum(["view", "create", "str_replace", "insert", "undo_edit"]),
@@ -12,9 +13,8 @@ const TextEditorParameters = z.object({
 });
 
 export const buildStrReplaceTool = (fileSystem: VirtualFileSystem) => {
-  return {
-    id: "str_replace_editor" as const,
-    args: {},
+  return tool({
+    description: "A tool for viewing, creating, and editing files in the virtual filesystem",
     parameters: TextEditorParameters,
     execute: async ({
       command,
@@ -24,7 +24,7 @@ export const buildStrReplaceTool = (fileSystem: VirtualFileSystem) => {
       new_str,
       old_str,
       view_range,
-    }: z.infer<typeof TextEditorParameters>) => {
+    }) => {
       switch (command) {
         case "view":
           return fileSystem.viewFile(
@@ -45,5 +45,5 @@ export const buildStrReplaceTool = (fileSystem: VirtualFileSystem) => {
           return `Error: undo_edit command is not supported in this version. Use str_replace to revert changes.`;
       }
     },
-  };
+  });
 };

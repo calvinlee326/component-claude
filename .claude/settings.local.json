@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx vitest:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(brew upgrade:*)",
+      "Bash(npm audit)",
+      "Bash(npm audit:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm run test)",
+      "Bash(node:*)",
+      "Bash(npm info:*)",
+      "Bash(npm search:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run lint)",
+      "Bash(tree:*)",
+      "Bash(claude mcp add:*)",
+      "mcp__playwright:*",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_network_requests",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_run_code",
+      "WebSearch",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:ai-sdk.dev)",
+      "mcp__playwright__browser_click",
+      "Bash(cat:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
